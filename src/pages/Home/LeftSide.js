@@ -45,7 +45,6 @@ function LeftSide(props) {
   };
 
   const onClickFriendAndCreateChat = (userId) => {
-    debugger
     let payload = {
       currentUserId: localStorage.getItem("userId"),
       friendUserId: userId,
@@ -54,6 +53,9 @@ function LeftSide(props) {
       .createChat(payload)
       .then((resp) => {
         const createdChatId = resp.data.data;
+        if(createdChatId === '00000000-0000-0000-0000-000000000000'){
+          return;
+        }
         endpointsChat
           .getChatById(createdChatId)
           .then((resp) => {

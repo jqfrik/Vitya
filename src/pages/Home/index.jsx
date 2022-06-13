@@ -64,7 +64,6 @@ function Home() {
               endpointsChat
                 .getMessagesByChatId(payload)
                 .then((resp) => {
-                  debugger
                   const newMessages = resp.data;
                   console.log("СИГНАЛ ЕСТЬ")
                   setAllMessages(newMessages)
