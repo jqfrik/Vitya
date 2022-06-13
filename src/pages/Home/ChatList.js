@@ -9,7 +9,7 @@ function ChatList({ allMessages }) {
       <ul>
         {allMessages &&
           allMessages.length != 0 &&
-          allMessages.map((message) => <MessageItem name={message.user.name} message={Base64.decode(message.text)} time={new Date().toLocaleDateString("en-US")} />)}
+          allMessages.map((message) => <MessageItem name={message.user.name} message={Base64.decode(message.text)} time={new Date(message.createdDate).toLocaleDateString({},{hour:"numeric",minute:"numeric",second:"numeric"})} />)}
       </ul>
     </div>
   );

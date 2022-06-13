@@ -3,12 +3,23 @@ import { DataContextProvider } from "../../App";
 import LeftSide from "./LeftSide";
 import ChatList from "./ChatList";
 import {
-  HubConnection,
   HubConnectionBuilder,
   HttpTransportType,
 } from "@microsoft/signalr";
-import endpoints from "../../services/api/endpoints/auth";
 import endpointsChat from "../../services/api/endpoints/chat";
+
+let currentTime = 0;
+
+document.addEventListener("mousemouse",e =>{
+  
+})
+
+setInterval(()=> {
+  if(currentTime == 30){
+    
+  }
+  currentTime++
+},1000)
 
 function Home() {
   const context = React.useContext(DataContextProvider);
